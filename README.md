@@ -1,3 +1,3 @@
-# Kevin Olson's dotfiles
+# kevin's dotfiles
 
 ![shell prompt](/prompt.png)
