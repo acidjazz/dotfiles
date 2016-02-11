@@ -10,13 +10,38 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+
+" general auto-completion
 " cd .vim/bundle/YouCompleteMe; ./install.py --tern-completer
+Plugin 'Valloric/YouCompleteMe'
+
+" using lines to match and track indention
 Plugin 'Yggdroot/indentLine'
 
-
+" write { it writes }, write ' it adds another'
 Plugin 'Raimondi/delimitMate'
 
+" syntastic, see https://github.com/scrooloose/syntastic for recommended
+" .vimrc additions
+Plugin 'scrooloose/syntastic'
+
+Plugin 'tpope/vim-fugitive'
+
+" sweet status/tabline for vim 
+" for powerline fonts remember to install em via
+" https://github.com/powerline/fonts
+" then make sure macvim is installed 
+" brew install macvim --env-std --override-system-vim
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" nerdtree, ctrl+n
+Plugin 'scrooloose/nerdtree'
+
+" signify, shows added/modified/removed lines
+Plugin 'mhinz/vim-signify'
+
+" gruvbox colorscheme
 Plugin 'morhetz/gruvbox'
 Plugin 'ap/vim-css-color'
 Plugin 'kchmck/vim-coffee-script'
@@ -44,16 +69,17 @@ set smartindent
 set mouse=a
 set ttymouse=xterm2
 
-if has('cmdline_info')
-  set ruler
-  set rulerformat=%30(%=\:c(%o)w%n%y%m%r%w\ %l,%c%V\ %P%)
-  set showcmd
-endif
+"if has('cmdline_info')
+""  set ruler
+""  set rulerformat=%30(%=\:c(%o)w%n%y%m%r%w\ %l,%c%V\ %P%)
+""  set showcmd
+"endif
 
-if has('statusline')
-  set laststatus=1
-  set statusline=%<%f\ %=\:c(%o)\b%n%y%m%r%w\ %l,%c%V\ %P
-endif
+"if has('statusline')
+""  set laststatus=1
+""  set statusline=%<%f\ %=\:c(%o)\b%n%y%m%r%w\ %l,%c%V\ %P
+"endif
+set laststatus=2
 
 syntax enable
 
@@ -100,4 +126,20 @@ set guioptions-=r
 set guioptions-=L
 
 colorscheme gruvbox
-set guifont=Menlo:h18
+set guifont=Hack:h18
+"set guifont=Menlo:h18
+
+
+
+" air-line
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+ 
+
+" signify
+"let g:signify_sign_overwrite = 0
