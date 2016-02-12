@@ -38,8 +38,14 @@ Plugin 'vim-airline/vim-airline-themes'
 " nerdtree, ctrl+n
 Plugin 'scrooloose/nerdtree'
 
+" nerdtree git support
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " signify, shows added/modified/removed lines
 Plugin 'mhinz/vim-signify'
+
+" minimap
+Plugin 'severin-lemaignan/vim-minimap'
 
 " gruvbox colorscheme
 Plugin 'morhetz/gruvbox'
