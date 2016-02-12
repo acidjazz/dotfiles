@@ -35,10 +35,19 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" ctrlp, full path fuzzy finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" easymotion, on-screen search clarity, just hit \\w and then type the chars
+" of the word/part you want to hop to
+Plugin 'easymotion/vim-easymotion'
+
+" best markdown syntax
+Plugin 'gabrielelana/vim-markdown'
+
 " nerdtree, ctrl+n
 Plugin 'scrooloose/nerdtree'
-
-" nerdtree git support
+" nerdtree git support - shows git status of files/dirs
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " signify, shows added/modified/removed lines
@@ -89,10 +98,6 @@ set laststatus=2
 
 syntax enable
 
-augroup CoffeeBufUpdate
-  autocmd User CoffeeCompile,CoffeeRun exec bufwinnr(b:coffee_src_buf) 'wincmd w'
-augroup END
-
 :map <C-C> :CoffeeWatch vert <Enter> :setl scrollbind <Enter> <C-w> <C-w> :setl scrollbind
 
 function! s:RemoveGeneratedBy()
@@ -117,16 +122,6 @@ augroup CoffeeBufUpdate
   autocmd User CoffeeCompile,CoffeeWatch call s:RemoveGeneratedBy()
 augroup END
 
-
-augroup LiveScriptBufUpdate
-  autocmd User LiveScriptCompile,LiveScriptWatch call s:RemoveGeneratedBy()
-augroup END
-
-
-au BufWritePost *.ls silent LiveScriptMake!
-
-:map <C-X> :LiveScriptCompile watch vert <Enter> :setl scrollbind <Enter> <C-w> <C-w> :setl scrollbind
-
 "" remove scrollbars
 set guioptions-=r
 set guioptions-=L
@@ -140,12 +135,31 @@ set guifont=Hack:h18
 " air-line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
+
+
+" airline tweaks
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
- 
 
 " signify
 "let g:signify_sign_overwrite = 0
+"
+
+" easymotion - lest just do overwin since its crazy awesome
+map <Leader> <Plug>(easymotion-prefix)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+map <Leader>l <Plug>(easymotion-overwin-line)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
