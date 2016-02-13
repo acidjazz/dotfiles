@@ -56,13 +56,28 @@ Plugin 'mhinz/vim-signify'
 " minimap
 Plugin 'severin-lemaignan/vim-minimap'
 
+" cursor crosshair!
+Plugin 'bronson/vim-crosshairs'
+
 " gruvbox colorscheme
 Plugin 'morhetz/gruvbox'
+
+" show hex/text color values in css/stylus/yaml/etc
 Plugin 'ap/vim-css-color'
+
+" coffeesript syntax and auto-compilation
 Plugin 'kchmck/vim-coffee-script'
+
+" jade syntax
 Plugin 'digitaltoad/vim-jade'
+
+" stylus syntax
 Plugin 'wavded/vim-stylus'
+
+" json syntax
 Plugin 'elzr/vim-json'
+
+" a ton of 256color colorschemes to browse
 Plugin 'noah/vim256-color'
 
 call vundle#end()            " required
@@ -126,6 +141,13 @@ augroup END
 set guioptions-=r
 set guioptions-=L
 
+"colorscheme 256_asu1dark
+"let g:seoul256_background = 233
+" colorscheme kevinseoul
+" colorscheme solarized
+" colorscheme fu
+" colorscheme solarized
+" colorscheme strange
 colorscheme gruvbox
 set guifont=Hack:h18
 "set guifont=Menlo:h18
@@ -163,3 +185,9 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map <Leader>l <Plug>(easymotion-overwin-line)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
+
+" corsshair cursor config
+set cursorline    " enable the horizontal line
+set cursorcolumn  " enable the vertical line
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
