@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 " using vim-plug, installation:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" open vi, :PlugInstall
 
 
 " general auto-completion
