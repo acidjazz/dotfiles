@@ -100,16 +100,6 @@ set smartindent
 set mouse=a
 set ttymouse=xterm2
 
-"if has('cmdline_info')
-""  set ruler
-""  set rulerformat=%30(%=\:c(%o)w%n%y%m%r%w\ %l,%c%V\ %P%)
-""  set showcmd
-"endif
-
-"if has('statusline')
-""  set laststatus=1
-""  set statusline=%<%f\ %=\:c(%o)\b%n%y%m%r%w\ %l,%c%V\ %P
-"endif
 set laststatus=2
 
 syntax enable
@@ -157,12 +147,9 @@ set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 
 
-" air-line
+" airline tweaks
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
-
-
-" airline tweaks
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -177,10 +164,6 @@ let g:syntastic_check_on_wq = 0
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" signify
-"let g:signify_sign_overwrite = 0
-"
-
 " easymotion - lest just do overwin since its crazy awesome
 map <Leader> <Plug>(easymotion-prefix)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
@@ -194,3 +177,4 @@ set cursorline    " enable the horizontal line
 set cursorcolumn  " enable the vertical line
 highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
