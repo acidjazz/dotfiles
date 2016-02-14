@@ -1,4 +1,3 @@
-filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 "       _             _
@@ -84,6 +83,8 @@ Plug 'elzr/vim-json'
 Plug 'noah/vim256-color'
 
 call plug#end()
+
+filetype plugin indent on
 
 set t_Co=256
 
