@@ -149,7 +149,9 @@ set guioptions-=L
 " colorscheme solarized
 " colorscheme strange
 colorscheme gruvbox
-set guifont=Hack:h18
+set guifont=Roboto\ Mono\ for\ Powerline:h18
+"set guifont="Roboto Mono for Powerline":h18
+"set guifont=Hack:h18
 "set guifont=Menlo:h18
 
 
