@@ -1,89 +1,87 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"       _             _
+" _ __ | |_   _  __ _(_)_ __  ___
+"| '_ \| | | | |/ _` | | '_ \/ __|
+"| |_) | | |_| | (_| | | | | \__ \
+"| .__/|_|\__,_|\__, |_|_| |_|___/
+"|_|            |___/
+" using vim-plug, installation:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 " general auto-completion
-" cd .vim/bundle/YouCompleteMe; ./install.py --tern-completer
-Plugin 'Valloric/YouCompleteMe'
+" cd .vim/plugged/YouCompleteMe; ./install.py
+Plug 'Valloric/YouCompleteMe'
 
-" using lines to match and track indention
-Plugin 'Yggdroot/indentLine'
+" use lines to match and track indention
+Plug 'Yggdroot/indentLine'
 
 " write { it writes }, write ' it adds another'
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 " syntastic, see https://github.com/scrooloose/syntastic for recommended
 " .vimrc additions
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
-Plugin 'tpope/vim-fugitive'
+" vim git awesomeness
+Plug 'tpope/vim-fugitive'
 
 " sweet status/tabline for vim 
 " for powerline fonts remember to install em via
 " https://github.com/powerline/fonts
 " then make sure macvim is installed 
-" brew install macvim --env-std --override-system-vim
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" with: brew install macvim --env-std --override-system-vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " ctrlp, full path fuzzy finder
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-" easymotion, on-screen search clarity, just hit \\w and then type the chars
-" of the word/part you want to hop to
-Plugin 'easymotion/vim-easymotion'
+" easymotion, on-screen search clarity, just hit \w and then type the chars
+" of the word/part you want to hop to, w = word, l = line, f = find 
+Plug 'easymotion/vim-easymotion'
 
 " best markdown syntax
-Plugin 'gabrielelana/vim-markdown'
+Plug 'gabrielelana/vim-markdown'
 
 " nerdtree, ctrl+n
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " nerdtree git support - shows git status of files/dirs
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " signify, shows added/modified/removed lines
-Plugin 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 
-" minimap
-Plugin 'severin-lemaignan/vim-minimap'
+" minimap - hilarious dots
+Plug 'severin-lemaignan/vim-minimap'
 
 " cursor crosshair!
-Plugin 'bronson/vim-crosshairs'
+Plug 'bronson/vim-crosshairs'
 
 " gruvbox colorscheme
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " show hex/text color values in css/stylus/yaml/etc
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 
 " coffeesript syntax and auto-compilation
-Plugin 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 
 " jade syntax
-Plugin 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-jade'
 
 " stylus syntax
-Plugin 'wavded/vim-stylus'
+Plug 'wavded/vim-stylus'
 
 " json syntax
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
 " a ton of 256color colorschemes to browse
-Plugin 'noah/vim256-color'
+Plug 'noah/vim256-color'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-"call pathogen#infect()
+call plug#end()
 
 set t_Co=256
 
