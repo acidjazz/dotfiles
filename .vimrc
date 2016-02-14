@@ -1,3 +1,4 @@
+filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 "       _             _
