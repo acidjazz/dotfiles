@@ -64,8 +64,7 @@ alias gs="git status"
 alias gd="git diff --color"
 
 gcp() { git commit -am "$*"; git push; }
-
-gcaa() { gcp "$*"; cd ../cune; gcp "$*"; cd ../talos; scr/deploy.sh; }
+gpom() { git pull origin master; }
 
 alias s-a="ssh acidjazz@notchill.com"
 alias s-2="ssh ec2-user@256.sh"
@@ -88,5 +87,4 @@ export PATH="/usr/local/sbin:$PATH"
 set t_Co=256
 
 source .bash_prompt
-
 
