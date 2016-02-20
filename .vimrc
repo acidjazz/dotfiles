@@ -181,3 +181,6 @@ set cursorline    " enable the horizontal line
 set cursorcolumn  " enable the vertical line
 highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
+let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
+
