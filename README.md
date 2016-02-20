@@ -11,9 +11,13 @@
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-* open vim, type :PlugInstall
+* open vim, type :PlugInstall, like so
+![vim-plug](https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif)
 
 
+### Examples
 
 ![shell prompt](/prompt.png)
+
+
 ![terminal prompt](/terminal.png)
