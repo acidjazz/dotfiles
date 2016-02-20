@@ -12,6 +12,9 @@
 ```
 
 * open vim, type :PlugInstall, like so
+
+<br /><br />
+
 ![vim-plug](https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif)
 
 
