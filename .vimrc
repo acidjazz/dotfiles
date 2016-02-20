@@ -17,14 +17,21 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 
 " use lines to match and track indention
-Plug 'Yggdroot/indentLine'
+" UPDATE: switched to indention guides instead, lines break a bunch of syntax
+" highlighting
+"Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
 
 " write { it writes }, write ' it adds another'
 Plug 'Raimondi/delimitMate'
 
 " syntastic, see https://github.com/scrooloose/syntastic for recommended
 " .vimrc additions
-Plug 'scrooloose/syntastic'
+ Plug 'scrooloose/syntastic'
 
 " vim git awesomeness
 Plug 'tpope/vim-fugitive'
@@ -61,8 +68,6 @@ Plug 'severin-lemaignan/vim-minimap'
 " cursor crosshair!
 Plug 'bronson/vim-crosshairs'
 
-" gruvbox colorscheme
-Plug 'morhetz/gruvbox'
 
 " show hex/text color values in css/stylus/yaml/etc
 Plug 'ap/vim-css-color'
@@ -77,8 +82,11 @@ Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
 
 " json syntax
-" Plug 'elzr/vim-json'
+Plug 'elzr/vim-json'
 
+" sweet themes
+Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-janah'
 " a ton of 256color colorschemes to browse
 Plug 'noah/vim256-color'
 
