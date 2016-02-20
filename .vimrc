@@ -77,7 +77,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
 
 " json syntax
-Plug 'elzr/vim-json'
+" Plug 'elzr/vim-json'
 
 " a ton of 256color colorschemes to browse
 Plug 'noah/vim256-color'
@@ -160,6 +160,10 @@ let g:syntastic_loc_list_height = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_python_flake8_args = "--ignore=E501"
+let g:syntastic_python_flake8_args = "--max-line-length=160"
+
+
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -177,4 +181,3 @@ set cursorline    " enable the horizontal line
 set cursorcolumn  " enable the vertical line
 highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-
