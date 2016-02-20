@@ -11,9 +11,8 @@
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-* Ppen vim, type :PlugInstall, like so
+* Open vim, type :PlugInstall, like so
 
-<br />
 
 ![vim-plug](https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif)
 
