@@ -11,6 +11,8 @@
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+* (Optional) Install the [Powerline-patched fonts](https://github.com/powerline/fonts), I currently have the .vimrc pointed to [Robot Mono for Powerline](https://github.com/powerline/fonts/blob/master/RobotoMono/Roboto%20Mono%20for%20Powerline.ttf) [Here](https://github.com/acidjazz/dotfiles/blob/master/.vimrc#L143)
+
 * Open vim, type :PlugInstall, like so
 
 
