@@ -3,7 +3,7 @@
 * Git-supported command line with !, ?, + signs to aid
 * Over 20+ vim plugins using the minimalist [vim-plug](https://github.com/junegunn/vim-plug) manager
 
-*** Installation
+### Installation
 
 * Install vim-plug
 ```bash
