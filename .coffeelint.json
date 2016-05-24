@@ -1,6 +1,6 @@
 {
   "max_line_length": {
-    "value": 120,
+    "value": 220,
     "level": "error",
     "limitComments": true
   }

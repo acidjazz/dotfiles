@@ -27,11 +27,12 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
 
 " write { it writes }, write ' it adds another'
-Plug 'Raimondi/delimitMate'
+" got crazy annoying, especially w/ markdown
+"Plug 'Raimondi/delimitMate'
 
 " syntastic, see https://github.com/scrooloose/syntastic for recommended
 " .vimrc additions
- Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " vim git awesomeness
 Plug 'tpope/vim-fugitive'
@@ -66,7 +67,7 @@ Plug 'mhinz/vim-signify'
 Plug 'severin-lemaignan/vim-minimap'
 
 " cursor crosshair!
-Plug 'bronson/vim-crosshairs'
+"Plug 'bronson/vim-crosshairs'
 
 
 " show hex/text color values in css/stylus/yaml/etc
@@ -75,8 +76,11 @@ Plug 'ap/vim-css-color'
 " coffeesript syntax and auto-compilation
 Plug 'kchmck/vim-coffee-script'
 
-" jade syntax
-Plug 'digitaltoad/vim-jade'
+" jade syntax - being renamed to pug??? - dont forget to npm install -g
+" jade-lint
+"
+Plug 'digitaltoad/vim-pug'
+
 
 " stylus syntax
 Plug 'wavded/vim-stylus'
@@ -168,8 +172,11 @@ let g:syntastic_loc_list_height = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_flake8_args = "--ignore=E501"
-let g:syntastic_python_flake8_args = "--max-line-length=160"
+" jade linting
+" let g:syntastic_jade_checkers = ['jade_lint']
+" let g:syntastic_pug_checkers = ['pug-lint']
+" config file for coffeelinting
+let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
 
 
 
@@ -184,11 +191,15 @@ map <Leader>l <Plug>(easymotion-overwin-line)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 
-" corsshair cursor config
-set cursorline    " enable the horizontal line
-set cursorcolumn  " enable the vertical line
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+" crosshair cursor config
+"set cursorline    " enable the horizontal line
+"set cursorcolumn  " enable the vertical line
+"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+"highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
-let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
-
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
