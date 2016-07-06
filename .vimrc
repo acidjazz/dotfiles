@@ -14,7 +14,8 @@ call plug#begin('~/.vim/plugged')
 
 " general auto-completion
 " cd .vim/plugged/YouCompleteMe; ./install.py
-Plug 'Valloric/YouCompleteMe'
+" off now because it barely works and takes all the cpu
+" Plug 'Valloric/YouCompleteMe'
 
 " use lines to match and track indention
 " UPDATE: switched to indention guides instead, lines break a bunch of syntax
@@ -37,7 +38,7 @@ Plug 'scrooloose/syntastic'
 " vim git awesomeness
 Plug 'tpope/vim-fugitive'
 
-" sweet status/tabline for vim 
+" sweet status/tabline for vim
 " for powerline fonts remember to install em via
 " https://github.com/powerline/fonts
 " then make sure macvim is installed 
@@ -67,7 +68,7 @@ Plug 'mhinz/vim-signify'
 Plug 'severin-lemaignan/vim-minimap'
 
 " cursor crosshair!
-"Plug 'bronson/vim-crosshairs'
+Plug 'bronson/vim-crosshairs'
 
 
 " show hex/text color values in css/stylus/yaml/etc
@@ -162,10 +163,13 @@ set guifont=Roboto\ Mono\ for\ Powerline:h18
 " airline tweaks
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" syntastic tweaks
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 1
@@ -192,10 +196,10 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 
 " crosshair cursor config
-"set cursorline    " enable the horizontal line
-"set cursorcolumn  " enable the vertical line
-"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-"highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+set cursorline    " enable the horizontal line
+set cursorcolumn  " enable the vertical line
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
