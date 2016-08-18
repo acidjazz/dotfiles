@@ -32,7 +32,7 @@ function ajprompt() {
 ANDROID_SDK="/Users/k/android/sdk"
 ANDROID_HOME="/Users/k/android/sdk"
 ANDROID_BIN=${ANDROID_SDK}/platform-tools
-PATH=/usr/local/git/bin:$PATH:${ANDROID_SDK}/platform-tools:/usr/local/git/bin:${ANDROID_SDK}/tools
+PATH=/usr/local/git/bin:$PATH:${ANDROID_SDK}/platform-tools:/usr/local/git/bin:${ANDROID_SDK}/tools:~/.composer/vendor/bin
 # PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 
 export NODE_PATH=/usr/local/lib/node_modules
@@ -41,7 +41,8 @@ export NODE_PATH=/usr/local/lib/node_modules
 export GIT_AUTHOR_NAME='kevin olson'
 export GIT_USER_NAME='acidjazz'
 export GIT_AUTHOR_EMAIL='acidjazz@gmail.com'
-export SVN_EDITOR='vim'
+export SVN_EDITOR='vi'
+export EDITOR='mvim'
 
 git config --global user.email "acidjazz@gmail.com"
 git config --global user.name "kevin olson"
@@ -74,6 +75,8 @@ nopub() { ssh -o PubkeyAuthentication=no "$"; }
 
 alias v='mvim'
 alias vi='mvim'
+alias vim='mvim'
+alias vif='mvim $(fzf)'
 
 t() { echo -e "\033];$1\007"; }
 
@@ -87,4 +90,3 @@ export PATH="/usr/local/sbin:$PATH"
 set t_Co=256
 
 source .bash_prompt
-
