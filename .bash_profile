@@ -65,6 +65,7 @@ alias gs="git status"
 alias gd="git diff --color"
 
 gcp() { git commit -am "$*"; git push; }
+gcpg() { git commit -am "$*"; git push; ./operations/gh-pages.sh; }
 gpom() { git pull origin master; }
 
 alias s-a="ssh acidjazz@notchill.com"
