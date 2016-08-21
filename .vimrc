@@ -27,10 +27,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
 
-" write { it writes }, write ' it adds another'
-" got crazy annoying, especially w/ markdown
-"Plug 'Raimondi/delimitMate'
-
 " syntastic, see https://github.com/scrooloose/syntastic for recommended
 " .vimrc additions
 Plug 'scrooloose/syntastic'
@@ -95,6 +91,10 @@ Plug 'mhinz/vim-janah'
 " a ton of 256color colorschemes to browse
 Plug 'noah/vim256-color'
 
+" blade syntax, why not
+Plug 'jwalton512/vim-blade'
+ 
+
 call plug#end()
 
 filetype plugin indent on
@@ -108,8 +108,8 @@ set backspace=2
 set expandtab
 set hlsearch
 
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 set mouse=a
 set ttymouse=xterm2
 
@@ -145,19 +145,8 @@ augroup END
 set guioptions-=r
 set guioptions-=L
 
-"colorscheme 256_asu1dark
-"let g:seoul256_background = 233
-" colorscheme kevinseoul
-" colorscheme solarized
-" colorscheme fu
-" colorscheme solarized
-" colorscheme strange
 colorscheme gruvbox
 set guifont=Roboto\ Mono\ for\ Powerline:h18
-"set guifont="Roboto Mono for Powerline":h18
-"set guifont=Hack:h18
-"set guifont=Menlo:h18
-
 
 
 " airline tweaks
@@ -176,13 +165,11 @@ let g:syntastic_loc_list_height = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" jade linting
+" pug linting
 " let g:syntastic_jade_checkers = ['jade_lint']
 " let g:syntastic_pug_checkers = ['pug-lint']
 " config file for coffeelinting
 let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
-
-
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -207,3 +194,9 @@ set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+" ctrlp ignores
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.html,*.jpg,*.png,*.gif,*.mp4
+set wildignore+=node_modules/**,bower_components/**,vendor/**
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|bower_components\|vendor'
+
