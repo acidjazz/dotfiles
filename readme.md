@@ -1,7 +1,7 @@
 # acidjazz' dotfiles
 
-* git-friendly command prompt showing branch
-  * push status, dirty or clean status, time from last commit
+* git-friendly command prompt showing 
+  * branch, push status, dirty or clean status, time from last commit
 * color coded directories and files
 * on-the-fly syntax highlighting as you type
 
@@ -41,12 +41,26 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 mkdir ~/.oh-my-zsh/custom/themes
 wget https://raw.githubusercontent.com/frmendes/geometry/master/geometry.zsh -O $HOME/.oh-my-zsh/custom/themes/geometry.zsh-theme
 ```
+
+* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
  
 ### Configuration
 
- * 
-
+ * Overwrite your current default `.vimrc` with the one in this repository
+   * Review and customize to your preferences
+ * Overwrite your current default `.zshrc` with the one in this repository
+   * Review and customize to your preferences
 
 ### Examples
 
+* Standard look with all the plugins active
+
 ![](vim_example.png)
+
+* Using the fuzzy finder [ctrlp](https://github.com/kien/ctrlp.vim) to bring up a pug view, (ctrl+enter splits it in)
+
+![](ctrlp.png)
