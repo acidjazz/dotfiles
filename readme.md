@@ -7,7 +7,7 @@
 * folder/file/everything autocompleted
 ![](autocomplete.gif)
 
-### VIM Installation
+### Installation
 
 * Install [vim-plug](https://github.com/junegunn/vim-plug)
 ```bash
@@ -28,16 +28,19 @@ wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircol
 
 * Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-via curl
-```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-via wget
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
-  
+
+* Install [geometry](https://github.com/frmendes/geometry)
+```shell
+mkdir ~/.oh-my-zsh/custom/themes
+wget https://raw.githubusercontent.com/frmendes/geometry/master/geometry.zsh -O $HOME/.oh-my-zsh/custom/themes/geometry.zsh-theme
+```
+ 
+### Configuration
+
+ * 
 
 
 ### Examples
