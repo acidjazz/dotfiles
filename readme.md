@@ -4,12 +4,12 @@
   * push status, dirty or clean status, time from last commit
 * color coded directories and files
 ![](geometry.gif)
+* folder/file/everything autocompleted
+![](autocomplete.gif)
 
-* Over 20+ vim plugins using the minimalist [vim-plug](https://github.com/junegunn/vim-plug) manager
+### Packages Included / installation
 
-### Installation
-
-* Install vim-plug
+* Install [vim-plug](https://github.com/junegunn/vim-plug)
 ```bash
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
