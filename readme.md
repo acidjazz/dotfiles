@@ -1,6 +1,10 @@
-# kevins' dotfiles
+# acidjazz' dotfiles
 
-* Git-supported command line with !, ?, + signs to aid
+* git-friendly command prompt showing branch
+  * push status, dirty or clean status, time from last commit
+* color coded directories and files
+![](geometry.gif)
+
 * Over 20+ vim plugins using the minimalist [vim-plug](https://github.com/junegunn/vim-plug) manager
 
 ### Installation
