@@ -18,7 +18,7 @@
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-* Open vim, type :PlugInstall, to install all the vim plugins
+* Open vim, type :PlugInstall to get the latest of all the vim plugins
 
 ![vim-plug](https://raw.githubusercontent.com/junegunn/i/master/vim-plug/installer.gif)
 
