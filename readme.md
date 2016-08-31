@@ -61,6 +61,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ![](vim_example.png)
 
-* Using the fuzzy finder [ctrlp](https://github.com/kien/ctrlp.vim) to bring up a pug view, (ctrl+enter splits it in)
+* Using the fuzzy finder [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) to bring up a pug view, (ctrl+enter splits it in)
 
-![](ctrlp.png)
+![](ctrlp.gif)
