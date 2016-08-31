@@ -22,16 +22,14 @@
   * I currently have the .vimrc pointed to [Robot Mono for Powerline](https://github.com/powerline/fonts/blob/master/RobotoMono/Roboto%20Mono%20for%20Powerline.ttf) [Here](https://github.com/acidjazz/dotfiles/blob/master/.vimrc#L143)
 
 
-* Install [oh-mhzsh](https://github.com/robbyrussell/oh-my-zsh)
+* Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-  * via curl
-
+via curl
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-  * via wget
-
+via wget
 ```shell
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
