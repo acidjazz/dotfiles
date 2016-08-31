@@ -182,12 +182,19 @@ map <Leader>l <Plug>(easymotion-overwin-line)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 
+" ctrlp ignores
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.html,*.jpg,*.png,*.gif,*.mp4
+set wildignore+=node_modules/**,bower_components/**,vendor/**
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|bower_components\|vendor'
+
+" background
+set background=dark
+
 " crosshair cursor config
 set cursorline    " enable the horizontal line
 set cursorcolumn  " enable the vertical line
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
-
+highlight CursorLine term=underline ctermbg=237 guibg=#000000
+highlight CursorColumn term=underline ctermbg=237 guibg=#000000
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
@@ -195,8 +202,4 @@ set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
-" ctrlp ignores
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.html,*.jpg,*.png,*.gif,*.mp4
-set wildignore+=node_modules/**,bower_components/**,vendor/**
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|bower_components\|vendor'
 

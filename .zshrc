@@ -11,10 +11,6 @@ export ZSH=/Users/k/.oh-my-zsh
 #ZSH_THEME="agnoster"
 #https://github.com/frmendes/geometry
 ZSH_THEME="geometry"
-#
-# git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 #CASE_SENSITIVE="true"
@@ -110,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 #  mmo.............:::::::::::::::.......-:///::-...........-:///:-..omm
 #  mmm/............................................................./mmm
 #
-# oh-my-zsh other config
+# oh-my-zsh custom config
 
 # android SDK / studio
 ANDROID_SDK="$HOME/android/sdk"
@@ -177,5 +173,3 @@ alias vif='mvim $(fzf)'
 t() { echo -e "\033];$1\007"; }
 
 set t_Co=256
-
-
