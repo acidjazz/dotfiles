@@ -65,9 +65,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ![](ctrlp.gif)
 
-### Easymotion Overwin motinos
+### Easymotion Overwin motion
+* Type \ to initiate easywin
+* 'f' for a search
+* a letter in the word you are looking for
+* then the letter presented (highlighted) 
+* you are now anywhere in your file(s) w/in 4 keystrokes
 
 ![](https://raw.githubusercontent.com/haya14busa/i/2753bd4dd1dfdf5962dbdbffabf24244e4e14243/easymotion/overwin-motions.gif)
 
-* Type \ to initiate, 'f' for a search, a letter in the word you are looking for, then the letter presented (highlighted) 
 
