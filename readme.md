@@ -65,10 +65,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ![](ctrlp.gif)
 
-### Easymotion Overwin motion
+### Easymotion example
+
+![Animated demonstration](https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif)
+
+### Easymotion Overwin motions
+
 * Type \ to initiate easywin
-* 'f' for a search
-* a letter in the word you are looking for
+* 'f' for a search, 's' for char, 'L' for line, 'w' for word
+* a letter in the word you are looking for (for f & s)
 * then the letter presented (highlighted) 
 * you are now anywhere in your file(s) w/in 4 keystrokes
 
