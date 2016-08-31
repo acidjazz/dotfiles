@@ -72,7 +72,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ### Easymotion Overwin motions
 
 * Type \ to initiate easywin
-* 'f' for a search, 's' for char, 'L' for line, 'w' for word
+* `f` for a search, `s` for char, `L` for line, `w` for word
 * a letter in the word you are looking for (for f & s)
 * then the letter presented (highlighted) 
 * you are now anywhere in your file(s) w/in 4 keystrokes
