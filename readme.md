@@ -64,3 +64,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 * Using the fuzzy finder [ctrlp](https://github.com/ctrlpvim/ctrlp.vim) to bring up a pug view, (ctrl+enter splits it in)
 
 ![](ctrlp.gif)
+
+* Easymotion Overwin motinos
+
+![](https://raw.githubusercontent.com/haya14busa/i/2753bd4dd1dfdf5962dbdbffabf24244e4e14243/easymotion/overwin-motions.gif)
+
+* fuzzy-search with EasyMotion
+
+![](https://raw.githubusercontent.com/haya14busa/i/eab1d12a8bd322223d551956a4fd8a21d5c4bfe9/easymotion/fuzzy-incsearch-easymotion.gif)
+  
+  
