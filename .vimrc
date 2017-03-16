@@ -34,6 +34,15 @@ Plug 'scrooloose/syntastic'
 " vim git awesomeness
 Plug 'tpope/vim-fugitive'
 
+" tabular, line up text, ex:
+" one = 1
+" four = 4
+" Execute either selected or w/in range: :Tab /=
+" one  = 1
+" four = 4
+"
+Plug 'godlygeek/tabular'
+
 " sweet status/tabline for vim
 " for powerline fonts remember to install em via
 " https://github.com/powerline/fonts
@@ -64,7 +73,7 @@ Plug 'mhinz/vim-signify'
 Plug 'severin-lemaignan/vim-minimap'
 
 " cursor crosshair!
-Plug 'bronson/vim-crosshairs'
+" MAJOR LAG Plug 'bronson/vim-crosshairs'
 
 
 " show hex/text color values in css/stylus/yaml/etc
@@ -93,7 +102,6 @@ Plug 'noah/vim256-color'
 
 " blade syntax, why not
 Plug 'jwalton512/vim-blade'
- 
 
 call plug#end()
 
@@ -101,19 +109,21 @@ filetype plugin indent on
 
 set t_Co=256
 
-set shiftwidth=2
 set foldmethod=marker
+set shiftwidth=2
 set tabstop=2
-set backspace=2
+set softtabstop=2
+set laststatus=2
 set expandtab
 set hlsearch
+"set backspace=2
+set backspace=indent,eol,start
 
 " set autoindent
 " set smartindent
 set mouse=a
 set ttymouse=xterm2
 
-set laststatus=2
 
 syntax enable
 
@@ -141,7 +151,7 @@ augroup CoffeeBufUpdate
   autocmd User CoffeeCompile,CoffeeWatch call s:RemoveGeneratedBy()
 augroup END
 
-"" remove scrollbars
+" remove scrollbars
 set guioptions-=r
 set guioptions-=L
 
@@ -197,6 +207,7 @@ highlight CursorLine term=underline ctermbg=237 guibg=#000000
 highlight CursorColumn term=underline ctermbg=237 guibg=#000000
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0

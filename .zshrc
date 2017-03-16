@@ -109,8 +109,8 @@ source $ZSH/oh-my-zsh.sh
 # oh-my-zsh custom config
 
 # android SDK / studio
-ANDROID_SDK="$HOME/android/sdk"
-ANDROID_HOME="$HOME/android/sdk"
+ANDROID_SDK="$HOME/Library/android/sdk"
+ANDROID_HOME="$HOME/Library/android/sdk"
 ANDROID_BIN=${ANDROID_SDK}/platform-tools
 PATH=${ANDROID_SDK}/platform-tools:${ANDROID_SDK}/tools:$PATH
 
