@@ -97,3 +97,4 @@ four  = 4
 ```
 ![](tabular.gif)
 
+Check out the [Vimcast](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/)  for more detail
