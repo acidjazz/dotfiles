@@ -43,6 +43,9 @@ Plug 'tpope/vim-fugitive'
 "
 Plug 'godlygeek/tabular'
 
+" best markdown syntax
+Plug 'plasticboy/vim-markdown'
+
 " sweet status/tabline for vim
 " for powerline fonts remember to install em via
 " https://github.com/powerline/fonts
@@ -58,8 +61,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " of the word/part you want to hop to, w = word, l = line, f = find 
 Plug 'easymotion/vim-easymotion'
 
-" best markdown syntax
-Plug 'gabrielelana/vim-markdown'
 
 " nerdtree, ctrl+n
 Plug 'scrooloose/nerdtree'
@@ -82,10 +83,18 @@ Plug 'ap/vim-css-color'
 " coffeesript syntax and auto-compilation
 Plug 'kchmck/vim-coffee-script'
 
+  Plug 'pangloss/vim-javascript'
+
 " jade syntax - being renamed to pug??? - dont forget to npm install -g
 " jade-lint
 "
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+
+
+" https://github.com/dNitro/vim-pug-complete
+" Vim omni-completion support for pug (formerly jade) template engine
+" Hit <C-x><C-o> in insert mode everywhere you expect something to popup
+Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
 
 
 " stylus syntax
@@ -102,6 +111,10 @@ Plug 'noah/vim256-color'
 
 " blade syntax, why not
 Plug 'jwalton512/vim-blade'
+
+" vue syntax, sure lets do it
+Plug 'posva/vim-vue'
+let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
 call plug#end()
 
@@ -155,7 +168,8 @@ augroup END
 set guioptions-=r
 set guioptions-=L
 
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme fu
 set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 
@@ -201,12 +215,12 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|bower_components\|vendo
 set background=dark
 
 " crosshair cursor config
-set cursorline    " enable the horizontal line
+"set cursorline    " enable the horizontal line
 set cursorcolumn  " enable the vertical line
-highlight CursorLine term=underline ctermbg=237 guibg=#000000
-highlight CursorColumn term=underline ctermbg=237 guibg=#000000
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
+"highlight CursorLine term=underline ctermbg=237 guibg=#000000
+"highlight CursorColumn term=underline ctermbg=237 guibg=#000000
+"highlight Cursor guifg=white guibg=black
+"highlight iCursor guifg=white guibg=steelblue
 
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
