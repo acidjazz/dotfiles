@@ -116,6 +116,11 @@ Plug 'jwalton512/vim-blade'
 Plug 'posva/vim-vue'
 let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
+" https://github.com/joshdick/onedark.vim
+" A dark Vim color scheme for the GUI and 16/256-color terminals, based on FlatColor, with colors inspired by the excellent One Dark syntax theme for the Atom text editor.
+"
+Plug 'joshdick/onedark.vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -169,7 +174,8 @@ set guioptions-=r
 set guioptions-=L
 
 "colorscheme gruvbox
-colorscheme fu
+"colorscheme fu
+colorscheme onedark
 set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 
@@ -216,15 +222,14 @@ set background=dark
 
 " crosshair cursor config
 "set cursorline    " enable the horizontal line
-set cursorcolumn  " enable the vertical line
+"set cursorcolumn  " enable the vertical line
 "highlight CursorLine term=underline ctermbg=237 guibg=#000000
 "highlight CursorColumn term=underline ctermbg=237 guibg=#000000
 "highlight Cursor guifg=white guibg=black
 "highlight iCursor guifg=white guibg=steelblue
 
-set guicursor=n-v-c:block-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon0
-set guicursor+=i:blinkwait10
-
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
 
