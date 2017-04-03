@@ -79,7 +79,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ![](https://raw.githubusercontent.com/haya14busa/i/2753bd4dd1dfdf5962dbdbffabf24244e4e14243/easymotion/overwin-motions.gif)
 
-### Tabular.vim
+### [Tabular.vim](https://github.com/godlygeek/tabular)
 
 Before:
 ```

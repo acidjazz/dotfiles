@@ -83,7 +83,7 @@ Plug 'ap/vim-css-color'
 " coffeesript syntax and auto-compilation
 Plug 'kchmck/vim-coffee-script'
 
-  Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " jade syntax - being renamed to pug??? - dont forget to npm install -g
 " jade-lint
@@ -200,6 +200,8 @@ let g:syntastic_check_on_wq = 0
 " let g:syntastic_pug_checkers = ['pug-lint']
 " config file for coffeelinting
 let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
