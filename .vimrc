@@ -27,6 +27,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
 
+" vue syntax, sure lets do it
+Plug 'posva/vim-vue'
+let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+
+" vue syntastic syntax
+Plug 'sekel/vim-vue-syntastic'
+
 " syntastic, see https://github.com/scrooloose/syntastic for recommended
 " .vimrc additions
 Plug 'scrooloose/syntastic'
@@ -88,13 +95,13 @@ Plug 'pangloss/vim-javascript'
 " jade syntax - being renamed to pug??? - dont forget to npm install -g
 " jade-lint
 "
-Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
+Plug 'digitaltoad/vim-pug'
 
 
 " https://github.com/dNitro/vim-pug-complete
 " Vim omni-completion support for pug (formerly jade) template engine
 " Hit <C-x><C-o> in insert mode everywhere you expect something to popup
-Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
+Plug 'dNitro/vim-pug-complete'
 
 
 " stylus syntax
@@ -112,9 +119,6 @@ Plug 'noah/vim256-color'
 " blade syntax, why not
 Plug 'jwalton512/vim-blade'
 
-" vue syntax, sure lets do it
-Plug 'posva/vim-vue'
-let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
 " https://github.com/joshdick/onedark.vim
 " A dark Vim color scheme for the GUI and 16/256-color terminals, based on FlatColor, with colors inspired by the excellent One Dark syntax theme for the Atom text editor.
@@ -195,12 +199,34 @@ let g:syntastic_loc_list_height = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" pug linting
+" ug linting
 " let g:syntastic_jade_checkers = ['jade_lint']
-" let g:syntastic_pug_checkers = ['pug-lint']
+let g:syntastic_pug_checkers = ['pug_lint']
+let g:syntastic_html_checkers = []
+let g:syntastic_vue_checkers = ['html/jshint']
+
+" Available checkers: html/jshint html/tidy html/validator html/w3 javascript/jshint
+
+
 " config file for coffeelinting
 let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
 let g:syntastic_javascript_checkers = ['jshint']
+
+" trying this for vue
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_vue_checkers = ['eslint']
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+    let g:syntastic_vue_eslint_exec = local_eslint
+endif
+
+" proper sass linter, npm install -g sass-lint
+let g:syntastic_scss_checkers      = [ 'sass_lint' ]
+let g:syntastic_sass_sass_args     = '-I ' . getcwd()
 
 
 " nerdtree

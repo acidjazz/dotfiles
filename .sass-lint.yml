@@ -1,0 +1,3 @@
+options:
+  rules:
+    clean-import-paths: false
