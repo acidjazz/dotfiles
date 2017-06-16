@@ -27,9 +27,12 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
 
+" lets get some proper html5 syntax
+Plug 'othree/html5.vim'
+ 
 " vue syntax, sure lets do it
 Plug 'posva/vim-vue'
-let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+" let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
 " vue syntastic syntax
 Plug 'sekel/vim-vue-syntastic'
@@ -74,8 +77,10 @@ Plug 'scrooloose/nerdtree'
 " nerdtree git support - shows git status of files/dirs
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" signify, shows added/modified/removed lines
-Plug 'mhinz/vim-signify'
+" gitgutter - (switched from signify cuz emojis, shows add/modified/removed
+" lines in git
+Plug 'airblade/vim-gitgutter'
+
 
 " minimap - hilarious dots
 Plug 'severin-lemaignan/vim-minimap'
@@ -107,6 +112,10 @@ Plug 'dNitro/vim-pug-complete'
 " stylus syntax
 Plug 'wavded/vim-stylus'
 
+" sass/scss syntax
+Plug 'cakebaker/scss-syntax.vim'
+
+
 " json syntax
 Plug 'elzr/vim-json'
 
@@ -124,6 +133,15 @@ Plug 'jwalton512/vim-blade'
 " A dark Vim color scheme for the GUI and 16/256-color terminals, based on FlatColor, with colors inspired by the excellent One Dark syntax theme for the Atom text editor.
 "
 Plug 'joshdick/onedark.vim'
+
+
+" vim emojis ofcourse, combined with git gutter we got emoji gutters
+Plug 'junegunn/vim-emoji'
+
+" youcompleteme
+
+Plug 'Valloric/YouCompleteMe'
+ 
 
 call plug#end()
 
@@ -207,7 +225,6 @@ let g:syntastic_vue_checkers = ['html/jshint']
 
 " Available checkers: html/jshint html/tidy html/validator html/w3 javascript/jshint
 
-
 " config file for coffeelinting
 let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
 let g:syntastic_javascript_checkers = ['jshint']
@@ -242,8 +259,11 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 " ctrlp ignores
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.html,*.jpg,*.png,*.gif,*.mp4
-set wildignore+=node_modules/**,bower_components/**,vendor/**
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|bower_components\|vendor'
+set wildignore+=node_modules/**,vendor/**
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules$\|\.git$\|vendor$\|storage$',
+  \ 'file': '\.DS_Store'
+  \ }
 
 " background
 set background=dark
@@ -261,3 +281,30 @@ set background=dark
 "set guicursor+=n-v-c:blinkon0
 "set guicursor+=i:blinkwait10
 
+
+" git emojis for got gutter w/ vim-emoji
+"
+let g:gitgutter_sign_added = emoji#for('small_blue_diamond')
+let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
+let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
+let g:gitgutter_sign_modified_removed = emoji#for('collision')
+
+
+" git emoji completion
+"
+
+"let g:ycm_semantic_triggers = {'text': [":"]}
+"set completefunc=emoji#complete
+"set omnifunc=emoji#complete
+"
+autocmd FileType vue syntax sync fromstart
+
+function! StylusFold()
+    setl foldmethod=indent
+    setl foldlevelstart=1
+    setl foldnestmax=2
+    setl foldminlines=5
+    setl fen
+endfunction
+
+au FileType stylus call StylusFold()

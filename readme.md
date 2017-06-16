@@ -1,4 +1,4 @@
-# acidjazz' dotfiles
+# kevins' dotfiles
 
 * git-friendly command prompt showing 
   * branch, push status, dirty or clean status, time from last commit
