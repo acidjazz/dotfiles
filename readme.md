@@ -1,16 +1,5 @@
 # kevins' dotfiles
 
-* git-friendly command prompt showing 
-  * branch, push status, dirty or clean status, time from last commit
-* color coded directories and files
-* on-the-fly syntax highlighting as you type
-
-![](geometry.gif)
-
-* folder/file/everything autocompleted
-
-![](autocomplete.gif)
-
 ## Installation
 
 * Install [vim-plug](https://github.com/junegunn/vim-plug)
@@ -98,3 +87,17 @@ four  = 4
 ![](tabular.gif)
 
 Check out the [Vimcast](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/)  for more detail
+
+## BASH Examples
+* git-friendly command prompt showing 
+  * branch, push status, dirty or clean status, time from last commit
+* color coded directories and files
+* on-the-fly syntax highlighting as you type
+
+![](geometry.gif)
+
+* folder/file/everything autocompleted
+
+![](autocomplete.gif)
+
+
