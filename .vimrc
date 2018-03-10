@@ -77,7 +77,7 @@ Plug 'scrooloose/nerdtree'
 " nerdtree git support - shows git status of files/dirs
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" gitgutter - (switched from signify cuz emojis, shows add/modified/removed
+" gitgutter - (switcedh from signify cuz emojis, shows add/modified/removed
 " lines in git
 Plug 'airblade/vim-gitgutter'
 
@@ -138,9 +138,19 @@ Plug 'joshdick/onedark.vim'
 " vim emojis ofcourse, combined with git gutter we got emoji gutters
 Plug 'junegunn/vim-emoji'
 
-" youcompleteme
+" les try youcompleteme
 
 Plug 'Valloric/YouCompleteMe'
+
+" finally doing some typescript
+" Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
+
+" Dart support!
+Plug 'dart-lang/dart-vim-plugin'
+
+" Let's get some tempaltes going
+Plug 'aperezdc/vim-template'
  
 
 call plug#end()
@@ -222,6 +232,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_pug_checkers = ['pug_lint']
 let g:syntastic_html_checkers = []
 let g:syntastic_vue_checkers = ['html/jshint']
+let g:syntastic_python_checkers = []
 
 " Available checkers: html/jshint html/tidy html/validator html/w3 javascript/jshint
 
@@ -258,8 +269,10 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 
 " ctrlp ignores
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.html,*.jpg,*.png,*.gif,*.mp4
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.gif,*.mp4
 set wildignore+=node_modules/**,vendor/**
+" nativescript
+set wildignore+=hooks/**,platforms/**
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules$\|\.git$\|vendor$\|storage$',
   \ 'file': '\.DS_Store'
@@ -289,8 +302,15 @@ let g:gitgutter_sign_modified = emoji#for('small_orange_diamond')
 let g:gitgutter_sign_removed = emoji#for('small_red_triangle')
 let g:gitgutter_sign_modified_removed = emoji#for('collision')
 
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd FileType typescript :set makeprg=tsc
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
-" git emoji completion
+
+
+" git emoji comppletion
 "
 
 "let g:ycm_semantic_triggers = {'text': [":"]}
@@ -298,13 +318,22 @@ let g:gitgutter_sign_modified_removed = emoji#for('collision')
 "set omnifunc=emoji#complete
 "
 autocmd FileType vue syntax sync fromstart
+"
+"function! StylusFold()
+"    setl foldmethod=indent
+"    setl foldlevelstart=1
+"    setl foldnestmax=2
+"    setl foldminlines=5
+"    setl fen
+"endfunction
+"au FileType stylus call StylusFold()
+"
+" set indentkeys-={,}
+" setlocal indentkeys=o,O,*<Return>,},],0),!^F
+"set nosmartindent
+"set cindent
+"filetype plugin indent on
+"set cinkeys-=0#
+"set indentkeys-=0#
+"autocmd FileType * set cindent "some file types override it
 
-function! StylusFold()
-    setl foldmethod=indent
-    setl foldlevelstart=1
-    setl foldnestmax=2
-    setl foldminlines=5
-    setl fen
-endfunction
-
-au FileType stylus call StylusFold()

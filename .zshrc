@@ -156,9 +156,13 @@ alias gca="git commit -a"
 alias gs="git status"
 alias gd="git diff --color"
 
-gcp() { git commit -am "$*"; git push; }
+gc() { git commit -am "$(emojify "$*")" }
+gcp() { git commit -am "$(emojify "$*")"; git push; }
 gcpg() { git commit -am "$*"; git push; ./operations/gh-pages.sh; }
 gpom() { git pull origin master; }
+
+# grep through source code excluding node_modules/
+gnm() { grep --exclude-dir=node_modules -ir "$@" * }
 
 alias s-a="ssh acidjazz@notchill.com"
 alias s-2="ssh ec2-user@256.sh"
