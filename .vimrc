@@ -65,7 +65,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " ctrlp, full path fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
 
 " easymotion, on-screen search clarity, just hit \w and then type the chars
 " of the word/part you want to hop to, w = word, l = line, f = find 
@@ -140,7 +143,7 @@ Plug 'junegunn/vim-emoji'
 
 " les try youcompleteme
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " finally doing some typescript
 " Plug 'leafgarland/typescript-vim'
@@ -151,7 +154,21 @@ Plug 'dart-lang/dart-vim-plugin'
 
 " Let's get some tempaltes going
 Plug 'aperezdc/vim-template'
- 
+
+" rainbow braces/etc
+Plug 'luochen1990/rainbow'
+
+
+" PHP??!?
+" Plug 'tpope/vim-dispatch'             "| Optional
+" Plug 'tpope/vim-projectionist'        "|
+" Plug 'noahfrederick/vim-composer'     "|
+" Plug 'noahfrederick/vim-laravel'
+
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'Shougo/unite.vim'
+" Plug 'm2mdas/phpcomplete-extended'
+" Plug 'm2mdas/phpcomplete-extended-laravel'
 
 call plug#end()
 
@@ -177,7 +194,7 @@ set ttymouse=xterm2
 
 syntax enable
 
-:map <C-C> :CoffeeWatch vert <Enter> :setl scrollbind <Enter> <C-w> <C-w> :setl scrollbind
+" :map <C-C> :CoffeeWatch vert <Enter> :setl scrollbind <Enter> <C-w> <C-w> :setl scrollbind
 
 function! s:RemoveGeneratedBy()
   " If there was an error compiling, there's no comment to remove.
@@ -270,11 +287,11 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 " ctrlp ignores
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.gif,*.mp4
-set wildignore+=node_modules/**,vendor/**
+set wildignore+=node_modules/**,vendor/**,dist/**
 " nativescript
 set wildignore+=hooks/**,platforms/**
 let g:ctrlp_custom_ignore = {
-  \ 'dir': 'node_modules$\|\.git$\|vendor$\|storage$',
+  \ 'dir': 'node_modules$\|\.git$\|vendor$\|storage$\|dist$',
   \ 'file': '\.DS_Store'
   \ }
 
@@ -337,3 +354,26 @@ autocmd FileType vue syntax sync fromstart
 "set indentkeys-=0#
 "autocmd FileType * set cindent "some file types override it
 
+let g:username = "kevin olson"
+let g:email = "acidjazz@gmail.com"
+let g:license = "APACHE"
+
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_index_composer_command = "composer"
+
+" illumuniate customization
+hi illuminatedWord cterm=underline gui=underline
+
+" turnon rainbow braces
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-p': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+noremap <C-p> :Files<Cr>
+noremap <C-a> :Ag<Cr>
