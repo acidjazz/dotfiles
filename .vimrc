@@ -32,14 +32,6 @@ Plug 'othree/html5.vim'
  
 " vue syntax, sure lets do it
 Plug 'posva/vim-vue'
-" let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
-
-" vue syntastic syntax
-Plug 'sekel/vim-vue-syntastic'
-
-" syntastic, see https://github.com/scrooloose/syntastic for recommended
-" .vimrc additions
-Plug 'scrooloose/syntastic'
 
 " vim git awesomeness
 Plug 'tpope/vim-fugitive'
@@ -52,9 +44,6 @@ Plug 'tpope/vim-fugitive'
 " four = 4
 "
 Plug 'godlygeek/tabular'
-
-" best markdown syntax
-Plug 'plasticboy/vim-markdown'
 
 " sweet status/tabline for vim
 " for powerline fonts remember to install em via
@@ -131,9 +120,14 @@ Plug 'noah/vim256-color'
 " blade syntax, why not
 Plug 'jwalton512/vim-blade'
 
+" lets see what happens
+Plug 'w0rp/ale'
 
 " https://github.com/joshdick/onedark.vim
 " A dark Vim color scheme for the GUI and 16/256-color terminals, based on FlatColor, with colors inspired by the excellent One Dark syntax theme for the Atom text editor.
+"
+Plug 'editorconfig/editorconfig-vim'
+
 "
 Plug 'joshdick/onedark.vim'
 
@@ -157,6 +151,9 @@ Plug 'aperezdc/vim-template'
 
 " rainbow braces/etc
 Plug 'luochen1990/rainbow'
+
+" proper PHP syntax
+Plug 'StanAngeloff/php.vim'
 
 
 " PHP??!?
@@ -230,49 +227,19 @@ set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 " airline tweaks
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
+let g:airline_theme='onedark'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" syntastic tweaks
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" ug linting
-" let g:syntastic_jade_checkers = ['jade_lint']
-let g:syntastic_pug_checkers = ['pug_lint']
-let g:syntastic_html_checkers = []
-let g:syntastic_vue_checkers = ['html/jshint']
-let g:syntastic_python_checkers = []
-
 " Available checkers: html/jshint html/tidy html/validator html/w3 javascript/jshint
 
-" config file for coffeelinting
-let g:syntastic_coffee_coffeelint_args = "--file ~/.coffeelint.json"
-let g:syntastic_javascript_checkers = ['jshint']
-
-" trying this for vue
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_vue_checkers = ['eslint']
 let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
 if matchstr(local_eslint, "^\/\\w") == ''
     let local_eslint = getcwd() . "/" . local_eslint
 endif
-if executable(local_eslint)
-    let g:syntastic_javascript_eslint_exec = local_eslint
-    let g:syntastic_vue_eslint_exec = local_eslint
-endif
-
-" proper sass linter, npm install -g sass-lint
-let g:syntastic_scss_checkers      = [ 'sass_lint' ]
-let g:syntastic_sass_sass_args     = '-I ' . getcwd()
-
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
@@ -376,4 +343,11 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 noremap <C-p> :Files<Cr>
-noremap <C-a> :Ag<Cr>
+noremap <C-o> :Ag<Cr>
+
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_linters = {'javascript': ['eslint', 'standard']}
+
+
