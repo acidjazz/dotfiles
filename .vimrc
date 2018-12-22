@@ -166,6 +166,16 @@ Plug 'StanAngeloff/php.vim'
 " Plug 'Shougo/unite.vim'
 " Plug 'm2mdas/phpcomplete-extended'
 " Plug 'm2mdas/phpcomplete-extended-laravel'
+"
+"
+" lets try carbon code sharing
+Plug 'kristijanhusak/vim-carbon-now-sh'
+
+" lest try prettier for js
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+let g:prettier#config#semi = 'false'
+let g:prettier#config#trailing_comma = 'all'
+
 
 call plug#end()
 
