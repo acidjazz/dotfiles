@@ -155,7 +155,6 @@ Plug 'luochen1990/rainbow'
 " proper PHP syntax
 Plug 'StanAngeloff/php.vim'
 
-
 " PHP??!?
 " Plug 'tpope/vim-dispatch'             "| Optional
 " Plug 'tpope/vim-projectionist'        "|
@@ -229,9 +228,9 @@ augroup END
 set guioptions-=r
 set guioptions-=L
 
-"colorscheme gruvbox
+colorscheme gruvbox
 "colorscheme fu
-colorscheme onedark
+" colorscheme onedark
 set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 
@@ -360,4 +359,4 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_linters = {'javascript': ['eslint', 'standard']}
 
-
+" autocmd FileType vue setlocal indentkeys=o,O
