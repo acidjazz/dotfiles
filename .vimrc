@@ -115,7 +115,8 @@ Plug 'elzr/vim-json'
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-janah'
 " a ton of 256color colorschemes to browse
-Plug 'noah/vim256-color'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-scripts/Ambient-Color-Scheme'
 
 " blade syntax, why not
 Plug 'jwalton512/vim-blade'
@@ -228,9 +229,6 @@ augroup END
 set guioptions-=r
 set guioptions-=L
 
-colorscheme gruvbox
-"colorscheme fu
-" colorscheme onedark
 set guifont=Roboto\ Mono\ for\ Powerline:h18
 
 
@@ -360,3 +358,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {'javascript': ['eslint', 'standard']}
 
 " autocmd FileType vue setlocal indentkeys=o,O
+
+" colorscheme options
+" " alduin
+"
+colorscheme onedark

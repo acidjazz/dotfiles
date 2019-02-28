@@ -54,6 +54,7 @@ ZSH_THEME="geometry"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(aws brew composer common-aliases web-search zsh-syntax-highlighting)
 
 # for https://github.com/zsh-users/zsh-syntax-highlighting
@@ -123,6 +124,8 @@ export GIT_USER_NAME='acidjazz'
 export GIT_AUTHOR_EMAIL='acidjazz@gmail.com'
 export SVN_EDITOR='vi'
 export EDITOR='mvim'
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
 
 git config --global user.email "acidjazz@gmail.com"
 git config --global user.name "kevin olson"
@@ -156,13 +159,22 @@ alias gca="git commit -a"
 alias gs="git status"
 alias gd="git diff --color"
 
+alias agi="ag --ignore-dir=dist --ignore-dir=node_modules --ignore-dir=vendor --ignore-dir=snapshots"
+
 gc() { git commit -am "$(emojify "$*")" }
 gcp() { git commit -am "$(emojify "$*")"; git push; }
 gcpg() { git commit -am "$*"; git push; ./operations/gh-pages.sh; }
 gpom() { git pull origin master; }
+gcap() { git commit --amend --no-edit; git push --force; }
+gsrm() { git rm $(git ls-files --deleted); }
+
+pu() { vendor/bin/phpunit --testdox; }
 
 # grep through source code excluding node_modules/
-gnm() { grep --exclude-dir=node_modules -ir "$@" * }
+gnm() { grep --exclude-dir=node_modules -ir "$@" * } 
+gnv() { grep --exclude-dir=vendor --exclude-dir=node_modules -exclude-dir=storage -ir "$@" * } 
+gna() { grep --exclude-dir={node_modules,vendor,storage} -ir "$@" * } 
+
 
 alias s-a="ssh acidjazz@notchill.com"
 alias s-2="ssh ec2-user@256.sh"
@@ -177,3 +189,27 @@ alias vif='mvim $(fzf)'
 t() { echo -e "\033];$1\007"; }
 
 set t_Co=256
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/flutter/bin"
+export ANDROID_HOME=$ANDROID_HOME
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+
+alias pubapi='ssh ec2-user@api-ec2.pubmedia.io'
+alias pubweb='ssh ec2-user@web-ec2.pubmedia.io'
+
+alias pubapico='ssh ec2-user@api-ec2.pubmedia.co'
+alias pubwebco='ssh ec2-user@web-ec2.pubmedia.co'
+
+alias tjapi='ssh ec2-user@api-ec2.trendjet.io'
+alias tjweb='ssh ec2-user@web-ec2.trendjet.io'
+
+alias mhlo='ssh ec2-user@staging.mhlo.io'
+
+gmg() { gitmoji -l|grep -i "$*" }
+
