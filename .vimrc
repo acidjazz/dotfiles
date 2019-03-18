@@ -173,6 +173,10 @@ Plug 'kristijanhusak/vim-carbon-now-sh'
 
 " lest try prettier for js
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" https://github.com/heavenshell/vim-jsdoc
+Plug 'heavenshell/vim-jsdoc'
+
 let g:prettier#config#semi = 'false'
 let g:prettier#config#trailing_comma = 'all'
 
@@ -363,3 +367,12 @@ let g:ale_linters = {'javascript': ['eslint', 'standard']}
 " " alduin
 "
 colorscheme onedark
+
+" JSDOC
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_enable_es6 = 1
+command! -register JsDoc call jsdoc#insert()
+nmap <silent> <C-l> <Plug>(jsdoc)
+
+
