@@ -24,8 +24,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=7
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333333 ctermbg=0
 
 " lets get some proper html5 syntax
 Plug 'othree/html5.vim'
@@ -55,7 +55,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 " ctrlp, full path fuzzy finder
 " Plug 'ctrlpvim/ctrlp.vim'
-Plug '/usr/local/opt/fzf'
+" commented out version for MAC
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 
@@ -242,7 +245,6 @@ let g:airline#extensions#whitespace#checks = [ 'indent', 'mixed-indent-file' ]
 let g:airline_theme='onedark'
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Available checkers: html/jshint html/tidy html/validator html/w3 javascript/jshint
