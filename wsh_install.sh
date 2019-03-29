@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt-get install zsh git ssh silversearcher-ag byobu zip awscli mysql-server-5.7 mysql-client-5.7
-php7.2 php7.2-mbstring php7.2-xml php7.2-curl php7.2-zip php7.2-pdo
+php7.2 php7.2-mbstring php7.2-xml php7.2-curl php7.2-zip php7.2-pdo php7.2-mysql
 
 sudo mysql --defaults-file=/etc/mysql/debian.cnf
 USE mysql;
