@@ -38,6 +38,12 @@ alias vif='mvim $(fzf)'
 
 alias s-a="ssh acidjazz@notchill.com"
 
+alias pubapi='ssh ec2-user@api-ec2.pubmedia.io'
+alias pubweb='ssh ec2-user@web-ec2.pubmedia.io'
+alias pubapico='ssh ec2-user@api-ec2.pubmedia.co'
+alias pubwebco='ssh ec2-user@web-ec2.pubmedia.co'
+alias mhlo='ssh ec2-user@staging.mhlo.io'
+
 gc() { git commit -am "$(emojify "$*")"; }
 gcp() { git commit -am "$(emojify "$*")"; git push; }
 gmg() { gitmoji -l|grep -i "$*"; }
