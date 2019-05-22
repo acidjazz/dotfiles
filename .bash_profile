@@ -22,9 +22,13 @@ alias psg='ps aux | grep $1'
 alias psgg='ps auxww | grep $1'
 alias pss='ps aux'
 alias psss='ps auxwwf'
-alias lss='ls -la'
-alias l='ls'
-alias lsd='ls -ld */'
+
+alias lss='lsd -la'
+alias l='lsd'
+
+# alias lsd='ls -ld */'
+# replaced with https://github.com/Peltoche/lsd
+
 alias lsr="ls -altpRFG"
 
 alias gca="git commit -a"
@@ -42,6 +46,7 @@ alias pubapi='ssh ec2-user@api-ec2.pubmedia.io'
 alias pubweb='ssh ec2-user@web-ec2.pubmedia.io'
 alias pubapico='ssh ec2-user@api-ec2.pubmedia.co'
 alias pubwebco='ssh ec2-user@web-ec2.pubmedia.co'
+
 alias mhlo='ssh ec2-user@staging.mhlo.io'
 
 gc() { git commit -am "$(emojify "$*")"; }
