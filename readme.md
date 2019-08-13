@@ -36,6 +36,14 @@ wget https://raw.githubusercontent.com/frmendes/geometry/master/geometry.zsh -O 
 ```shell
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+* Install [MacVim](https://macvim-dev.github.io/macvim/)
+
+* Get rid of our titlebar
+
+```shell
+defaults write org.vim.MacVim MMNoTitleBarWindow true
+```
  
 ## Configuration
 
