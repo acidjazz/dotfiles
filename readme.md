@@ -2,6 +2,14 @@
 
 ## Installation
 
+* Install [MacVim](https://macvim-dev.github.io/macvim/)
+
+* Get rid of our titlebar
+```shell
+defaults write org.vim.MacVim MMNoTitleBarWindow true
+```
+ 
+
 * Install [vim-plug](https://github.com/junegunn/vim-plug)
 ```bash
  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -30,16 +38,6 @@ pip install powerline-shell
 ```
  * Update your `.bash_profile` [here](https://github.com/b-ryan/powerline-shell#bash)
 
-
-
-* Install [MacVim](https://macvim-dev.github.io/macvim/)
-
-* Get rid of our titlebar
-
-```shell
-defaults write org.vim.MacVim MMNoTitleBarWindow true
-```
- 
 ## Configuration
 
  * Overwrite your current default `.vimrc` with the one in this repository
