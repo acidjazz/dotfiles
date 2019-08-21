@@ -19,23 +19,18 @@
 wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors
 ```
 
-* Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
+* Install [LSDeluxe](https://github.com/Peltoche/lsd)
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+brew install lsd
 ```
 
-* Install [geometry](https://github.com/frmendes/geometry)
+* Install [powerline](https://github.com/b-ryan/powerline-shell#bash)
 ```shell
-mkdir ~/.oh-my-zsh/custom/themes
-wget https://raw.githubusercontent.com/frmendes/geometry/master/geometry.zsh -O $HOME/.oh-my-zsh/custom/themes/geometry.zsh-theme
+pip install powerline-shell
 ```
+ * Update your `.bash_profile` [here](https://github.com/b-ryan/powerline-shell#bash)
 
-* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-```shell
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
 
 * Install [MacVim](https://macvim-dev.github.io/macvim/)
 

@@ -1,11 +1,9 @@
 <template lang="pug">
 </template>
 
+
 <script>
-export default () {
+export default {
+
 }
 </script>
-
-<style lang="stylus">
-@import "../../assets/stylus/includes/*"
-</style>

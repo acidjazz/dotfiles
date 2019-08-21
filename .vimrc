@@ -53,13 +53,11 @@ Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" ctrlp, full path fuzzy finder
-" Plug 'ctrlpvim/ctrlp.vim'
-" commented out version for MAC
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" fzf.vim
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'https://github.com/Alok/notational-fzf-vim'
 
 
 " easymotion, on-screen search clarity, just hit \w and then type the chars
@@ -150,7 +148,7 @@ Plug 'leafgarland/typescript-vim'
 " Dart support!
 Plug 'dart-lang/dart-vim-plugin'
 
-" Let's get some tempaltes going
+" Let's get some templates going
 Plug 'aperezdc/vim-template'
 
 " rainbow braces/etc
@@ -357,6 +355,8 @@ let g:fzf_action = {
 
 noremap <C-p> :Files<Cr>
 noremap <C-o> :Ag<Cr>
+nnoremap <silent> <c-s> :NV<CR>
+
 
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -376,5 +376,10 @@ let g:jsdoc_input_description = 1
 let g:jsdoc_enable_es6 = 1
 command! -register JsDoc call jsdoc#insert()
 nmap <silent> <C-l> <Plug>(jsdoc)
+
+let g:nv_search_paths = ['./']
+let g:nv_use_short_pathnames = 1
+let g:nv_ignore_pattern = ['vendor/**', 'node_modules/**', 'dist/**']
+
 
 

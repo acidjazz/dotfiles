@@ -6,6 +6,7 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+export FZF_DEFAULT_COMMAND="/usr/local/bin/fzf"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -23,8 +24,9 @@ alias psgg='ps auxww | grep $1'
 alias pss='ps aux'
 alias psss='ps auxwwf'
 
-alias lss='lsd -la'
 alias l='lsd'
+alias ls='lsd'
+alias lss='lsd -la'
 
 # alias lsd='ls -ld */'
 # replaced with https://github.com/Peltoche/lsd
