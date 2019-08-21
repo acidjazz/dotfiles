@@ -42,7 +42,7 @@ pip install powerline-shell
 
  * Overwrite your current default `.vimrc` with the one in this repository
    * Review and customize to your preferences
- * Overwrite your current default `.zshrc` with the one in this repository
+ * Overwrite your current default `.bash_profile` with the one in this repository
    * Review and customize to your preferences
 
 ## VIM Examples
