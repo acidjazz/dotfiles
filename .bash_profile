@@ -50,3 +50,5 @@ gsrm() { git rm $(git ls-files --deleted); }
 
 pu() { vendor/bin/phpunit --testdox; }
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
