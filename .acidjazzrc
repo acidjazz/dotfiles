@@ -32,4 +32,4 @@ ghrs() { git log --reverse --pretty=format:"%C(blue bold)%ad %C(black)- %C(reset
 pu() { vendor/bin/phpunit --testdox; }
 
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:$PATH"
