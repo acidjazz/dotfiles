@@ -29,7 +29,14 @@ gsrm() { git rm $(git ls-files --deleted); }
 
 ghrs() { git log --reverse --pretty=format:"%C(blue bold)%ad %C(black)- %C(reset)%s" --after="$1 00:00" --before="$1 23:59" --date=format:'%m/%d/%y %I:%M%p' }
 
+go-outdated() { go list -u -m -json all | go-mod-outdated -direct -update }
+
+go-testpkg() { GOPROXY=proxy.golang.org go list -m github.com/$* }
+
+go-tag() { git tag $1; git push --tags; go-testpkg $2 }
+
 pu() { vendor/bin/phpunit --testdox; }
 
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.composer/vendor/bin:/Users/k/go/bin:$PATH"
+GOROOT="$GOROOT:/Users/k/"
